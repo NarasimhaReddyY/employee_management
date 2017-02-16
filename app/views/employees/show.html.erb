@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p id="notice">
+  <% unless @employee.email_verified %>
+    <%= "Check your inbox to verify your email " %>
+  <% end %>
+</p>
+
+<p id="notice">
+  <% unless @employee.phone_number_verified %>
+    <%= "Check your inbox to verify your phone number " %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @employee.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @employee.email %>
+  |
+  <strong>Verified</strong>
+  <%= @employee.email_verified %>
+</p>
+
+<p>
+  <strong>Phone number:</strong>
+  <%= @employee.phone_number %>
+  |
+  <strong>Verified</strong>
+  <%= @employee.phone_number_verified %>
+  <% unless @employee.phone_number_verified %>
+    <%= link_to 'verify', verify_phone_number_employee_url(@employee) %>
+  <% end %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @employee.birthday %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @employee.gender %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @employee.location %>
+</p>
+
+<%= link_to 'Edit', edit_employee_path(@employee) %>

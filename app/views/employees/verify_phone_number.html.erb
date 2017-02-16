@@ -1,0 +1,6 @@
+<%= form_tag confirm_phone_number_employee_url(@employee) do %>
+  <%= label_tag :otp %>
+  <%= text_field_tag :otp, params[:otp] %>
+
+  <%= submit_tag "verify now" %>
+<% end %>
