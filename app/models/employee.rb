@@ -52,11 +52,11 @@ class Employee
   end
 
   #Unsetting verified if email changed while updating employee
-  #This should be done in background jobs. But lack of time i am doing in callsbacks.
+  #This should be done in background jobs. But lack of time i am doing in callbacks.
   #TODO move this code to background jobs
 
   def verify_phone_number
-    self.set(email_verified: false)
+    self.set(phone_number_verified: false)
     set_otp_code
 
     sms_msg = "Hey #{self.name}, #{self.otp_code.to_i} is the OTP to validate your phone number.".freeze
